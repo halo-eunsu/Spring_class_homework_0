@@ -1,0 +1,32 @@
+<!-- beans.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <aop:aspectj-autoproxy/>
+    <context:annotation-config/>
+
+
+    <!-- DoorayHookSender 빈 정의 -->
+
+
+    <!-- RestTemplate 빈 정의 -->
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+
+    <!-- DoorayMessageSender 빈 정의 -->
+
+    <!-- DoorayMessageSender 빈 등록 -->
+    <bean id="doorayMessageSender" class="com.nhnacademy.edu.springframework.Dooray">
+        <!-- 필요한 설정 및 프로퍼티 설정 -->
+    </bean>
+
+    <!-- DoorayHookSender 빈 등록 -->
+    <bean id="doorayHookSender" class="com.nhn.dooray.messenger.DoorayHookSender">
+        <!-- 필요한 설정 및 프로퍼티 설정 -->
+    </bean>
+
+
+
+</beans>
