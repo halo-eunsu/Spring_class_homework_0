@@ -2,27 +2,31 @@ package com.nhnacademy.edu.springframework;
 
 public class User {
 
-    private String firstName;
-    private String lastName;
+   private String name;
 
-    public User(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    private String message;
+
+    public User(String name, String message) {
+        this.name= name;
+        this.message = message;
     }
 
-    public String getFirstName() {
-        return firstName;
+
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getMessage() {
+        return message;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setMessage(String message) {
+        this.message = message;
     }
+
+
 }
