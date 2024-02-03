@@ -13,7 +13,7 @@ public class Main {
             MessageSendService messageSendService = (MessageSendService) context.getBean("sendService");
 
 
-            messageSendService.doSendMessage(user, "오된다");
+            messageSendService.doSendMessage(user, "안녕하세요");
 
 
 

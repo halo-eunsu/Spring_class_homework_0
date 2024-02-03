@@ -11,28 +11,29 @@ import org.springframework.web.client.RestTemplate;
 @PropertySource("classpath:Dooray.properties")
 public class DoorayMessageSender implements MessageSender {
 
-    @Value("${propertyUrl}")
-    public String url;
+    DoorayHookSender doorayHookSender;
+
 
 
     public DoorayMessageSender(DoorayHookSender doorayHookSender) {
+        this.doorayHookSender = doorayHookSender;
     }
 
     @TimeLogging
     @Override
     public boolean sendMessage(User user, String message) {
 
-            try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")) {
+            try {
 
-                DoorayHookSender doorayHookSender = (DoorayHookSender) context.getBean("messageSender");
-                RestTemplate restTemplate = (RestTemplate) context.getBean("restTemplate");
+                DoorayHook doorayHook = DoorayHook.builder()
+                        .botName(user.getName())
+                        .text(user.getMessage())
+                        .build();
 
-                new DoorayHookSender(new RestTemplate(), url)
-                        .send(DoorayHook.builder()
-                                .botName(user.getName())
-                                .text(user.getMessage())
-                                .build());
+                doorayHookSender.send(doorayHook);
+
                 return true;
+
             } catch (Exception e) {
                 e.printStackTrace();
                 return false;

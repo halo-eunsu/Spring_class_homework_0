@@ -13,7 +13,7 @@
     </bean>
 
     <bean id="doorayHookSender" class="com.nhn.dooray.client.DoorayHookSender">
-        <constructor-arg ref = "restTemplate"/><constructor-arg value = "https://hook.dooray.com/services/3204376758577275363/3727911831849652136/t0TgHWJ1S9SWgyLnHKk53Q"/>
+        <constructor-arg name="resttemplate" ref = "restTemplate"/><constructor-arg name="url" value = "${propertyUrl}"/>
     </bean>
 
     <bean id="messageSender" class="com.nhnacademy.edu.springframework.DoorayMessageSender">

@@ -30,7 +30,7 @@ public class DoorayAspect {
         Object result = joinPoint.proceed();
         stopWatch.stop();
         System.out.println(stopWatch.prettyPrint());
-        System.out.println("Exiting method: " + methodName);
+
         return result;
     }
 
