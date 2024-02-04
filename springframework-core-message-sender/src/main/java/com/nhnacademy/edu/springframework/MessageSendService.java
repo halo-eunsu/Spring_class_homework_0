@@ -5,7 +5,7 @@ import org.aspectj.bridge.Message;
 public class MessageSendService {
     private MessageSender messageSender;
 
-    private String phoneNumber = "000-1111-2222";
+    private String phoneNumber ="";
 
     public MessageSendService( MessageSender messageSender, String phoneNumber) {
 
