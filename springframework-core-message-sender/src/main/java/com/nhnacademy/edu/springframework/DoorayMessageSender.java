@@ -6,9 +6,11 @@ import com.nhn.dooray.client.DoorayHookSender;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @PropertySource("classpath:Dooray.properties")
+@Component
 public class DoorayMessageSender implements MessageSender {
 
     DoorayHookSender doorayHookSender;
