@@ -9,7 +9,7 @@ public class MessageSendService {
 
     public MessageSendService( MessageSender messageSender, String phoneNumber) {
 
-        System.out.println("---------------"+ phoneNumber);
+
         this.messageSender = messageSender;
         this.phoneNumber = phoneNumber;
     }
