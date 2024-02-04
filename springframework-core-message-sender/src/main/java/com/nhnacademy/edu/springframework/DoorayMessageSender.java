@@ -35,8 +35,10 @@ public class DoorayMessageSender implements MessageSender {
                 return true;
 
             } catch (Exception e) {
-                e.printStackTrace();
+
+                System.err.println("Failed to send message via Dooray: " + e.getMessage());
                 return false;
+
             }
 
         }
