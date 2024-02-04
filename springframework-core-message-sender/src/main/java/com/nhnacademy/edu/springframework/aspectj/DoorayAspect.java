@@ -26,10 +26,11 @@ public class DoorayAspect {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-
         Object result = joinPoint.proceed();
+
         stopWatch.stop();
-        System.out.println(stopWatch.prettyPrint());
+        System.out.printf("%s.%s %dms%n", joinPoint.getTarget().getClass().getSimpleName(), methodName, stopWatch.getTotalTimeMillis());
+
 
         return result;
     }
