@@ -25,19 +25,21 @@ public class DoorayAspect {
 
 
         String methodName = joinPoint.getSignature().getName();
-
+        Object result;
 
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        Object result = joinPoint.proceed();
 
-        stopWatch.stop();
+        try {
+            result = joinPoint.proceed();
+        } finally {
+            stopWatch.stop();
+            log.info(String.format("%s.%s %dms", joinPoint.getTarget().getClass().getSimpleName(), methodName, stopWatch.getTotalTimeMillis()));
 
-        log.info(String.format("%s.%s %dms", joinPoint.getTarget().getClass().getSimpleName(), methodName, stopWatch.getTotalTimeMillis()));
-
-
+        }
         return result;
+
     }
 
 }
