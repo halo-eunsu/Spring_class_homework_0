@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 public class DoorayMessageSenderTest {
 
     @Test
-    public void testSendMessage() {
+    public void sendMessageTest() {
 
         String userName = "User";
         String message = "Message";
