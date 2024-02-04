@@ -36,7 +36,7 @@ public class DoorayMessageSender implements MessageSender {
 
             } catch (Exception e) {
 
-                System.err.println("Failed to send message via Dooray: " + e.getMessage());
+                System.err.println("메시지 전송 실패: " + e.getMessage());
                 return false;
 
             }
