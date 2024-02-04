@@ -1,9 +1,9 @@
 package com.nhnacademy.edu.springframework;
 
-import com.nhn.dooray.client.DoorayHookSender;
+
 import com.nhnacademy.edu.springframework.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 public class Main {
 
